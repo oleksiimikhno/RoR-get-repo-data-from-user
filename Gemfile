@@ -52,11 +52,14 @@ group :development, :test do
   gem 'graphiql-rails'
   gem 'graphql'
 
+  # rspec-rails brings the RSpec testing framework to Ruby on Rails as testing framework, Minitest.
+  gem 'rspec-rails'
+
   # RuboCop is a Ruby static code analyzer (a.k.a. linter) and code formatter.
   gem 'rubocop', require: false
 
-  # rspec-rails brings the RSpec testing framework to Ruby on Rails as testing framework, Minitest.
-  gem 'rspec-rails'
+  # JSLint on Rails is a Ruby library which lets you run the JSLint JavaScript code checker
+  gem 'jslint_on_rails'
 end
 
 group :development do
