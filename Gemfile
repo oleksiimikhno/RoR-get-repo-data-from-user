@@ -60,8 +60,8 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
 
   # GraphQL is a query language for APIs
-  gem 'graphiql-rails'
-  gem 'graphql'
+  # gem 'graphiql-rails'
+  # gem 'graphql'
 
   # RuboCop is a Ruby static code analyzer (a.k.a. linter) and code formatter.
   gem 'rubocop', require: false
