@@ -6,11 +6,11 @@ default: &default
 
 development:
   <<: *default
-  database: adeployer
+  database: deployer
 
 test:
   <<: *default
-  database: adeployer
+  database: deployer
 
 production:
   <<: *default
