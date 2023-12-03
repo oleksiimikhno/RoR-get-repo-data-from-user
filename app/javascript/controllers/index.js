@@ -29,6 +29,7 @@ const getDataGithubUser = async (userName) => {
         query: `
           {
             githubUser(name: "${userName}")
+            githubUserRepos(name: "${userName}")
           }
         `,
       }),
@@ -46,19 +47,19 @@ const getDataGithubUser = async (userName) => {
 const renderGithubUserData = async (userName) => {
   const response = await getDataGithubUser(userName);
   const userField = searchContainer.querySelector('.user-name');
+
+  const userData = JSON.parse(response['data']['githubUser']);
+  const repositoriesData = JSON.parse(response['data']['githubUserRepos']);
   
-  if (response['errors']) {
+  if (response['errors'] || userData['errors']) {
     userField.textContent = 'User not found';
     return;
   }
 
-  const data = JSON.parse(response['data']['githubUser']);
-  const repositories = data['repositories'];
+  userField.textContent = userData['name'];
 
-  userField.textContent = data['name'];
-
-  if (repositories.length) {
-    repositories.forEach((repository) => {
+  if (repositoriesData['repositories']) {
+    repositoriesData['repositories'].forEach((repository) => {
       repositoriesList.insertAdjacentHTML('afterbegin', `<li>${repository}</li>`);
     })
   } else {
