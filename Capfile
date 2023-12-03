@@ -11,7 +11,7 @@ require 'capistrano/rvm'
 require 'capistrano/rails'
 require 'capistrano/puma'
 require 'capistrano/puma/nginx'
-# require 'capistrano/puma/jungle'
+# require 'capistrano/jungle'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Nginx
 # install_plugin Capistrano::Puma::Jungle
