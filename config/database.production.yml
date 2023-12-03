@@ -6,11 +6,11 @@ default: &default
 
 development:
   <<: *default
-  database: app-name-dev
+  database: adeployer
 
 test:
   <<: *default
-  database: app-name-test
+  database: adeployer
 
 production:
   <<: *default
