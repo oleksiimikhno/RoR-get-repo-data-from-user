@@ -52,12 +52,6 @@ group :development, :test do
   gem 'graphiql-rails'
   gem 'graphql'
 
-  # rspec-rails brings the RSpec testing framework to Ruby on Rails as testing framework, Minitest.
-  gem 'rspec-rails'
-
-  # Record your test suite's HTTP interactions and replay them during future test.
-  gem 'vcr'
-
   # RuboCop is a Ruby static code analyzer (a.k.a. linter) and code formatter.
   gem 'rubocop', require: false
 
@@ -80,4 +74,13 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
+
+  # rspec-rails brings the RSpec testing framework to Ruby on Rails as testing framework, Minitest.
+  gem 'rspec-rails'
+
+  # Record your test suite's HTTP interactions and replay them during future test.
+  gem 'vcr'
+
+  # Library for stubbing and setting expectations on HTTP requests in Ruby.
+  gem 'webmock'
 end

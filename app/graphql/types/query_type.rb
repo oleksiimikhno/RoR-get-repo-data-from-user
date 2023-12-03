@@ -24,24 +24,33 @@ module Types
       argument :name, String, required: true
     end
 
+    field :github_user_repos, String, null: false do
+      argument :name, String, required: true
+    end
+
     def github_user(name:)
       api_url = "https://api.github.com/users/#{name.strip}"
       user = get_json(api_url)
+      if user['login']
+        user_name = user['name'] || user['login']
 
-      return if user['login'].nil?
+        { name: user_name }.to_json 
+      else
+        { errors: user['message'] }.to_json
+      end
+    end
 
-      user_name = user['name'] || user['login']
-      repos = get_github_user_repos(user['repos_url'])
+    def github_user_repos(name:)
+      api_url = "https://api.github.com/users/#{name.strip}/repos"
+      repos = get_json(api_url)
+      repos = repos.map { |repo| repo['name'] }
 
-      { name: user_name, repositories: repos }.to_json
+      { repositories: repos }.to_json
+    rescue StandardError
+      { errors: repos['message'] }.to_json
     end
 
     private
-
-    def get_github_user_repos(url)
-      repos = get_json(url)
-      repos.map { |repo| repo['name'] }
-    end
 
     def get_json(url)
       response = Net::HTTP.get(URI(url))
