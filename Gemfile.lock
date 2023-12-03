@@ -170,6 +170,7 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.5)
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
@@ -186,7 +187,12 @@ GEM
       net-protocol
     net-ssh (7.2.0)
     nio4r (2.7.0)
+    nokogiri (1.15.5)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.15.5-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
     parser (3.2.2.4)
@@ -330,6 +336,8 @@ GEM
 
 PLATFORMS
   arm64-darwin-23
+  ruby
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt_pbkdf
