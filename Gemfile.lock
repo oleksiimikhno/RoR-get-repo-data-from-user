@@ -201,6 +201,7 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
+    pg (1.5.4)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.4)
@@ -300,9 +301,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.9-aarch64-linux)
-    sqlite3 (1.6.9-arm64-darwin)
-    sqlite3 (1.6.9-x86_64-linux)
     sshkit (1.21.6)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -365,6 +363,7 @@ DEPENDENCIES
   net-imap
   net-pop
   net-smtp
+  pg
   puma (>= 5.0)
   rails (~> 7.1.2)
   redis (>= 4.0.1)
@@ -372,7 +371,6 @@ DEPENDENCIES
   rubocop
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
   sshkit-sudo
   stimulus-rails
   turbo-rails
