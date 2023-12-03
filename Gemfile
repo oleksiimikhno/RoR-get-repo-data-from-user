@@ -43,6 +43,15 @@ gem 'bootsnap', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem 'image_processing', '~> 1.2'
 
+# A Ruby binding to the Ed25519 elliptic curve public-key signature system described in RFC 8032.
+gem 'ed25519'
+
+# This gem implements bcrypt_pbkdf (a variant of PBKDF2 with bcrypt-based PRF)
+gem 'bcrypt_pbkdf'
+
+# for passwords in .env.production file
+gem 'dotenv-rails'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
 
@@ -57,6 +66,10 @@ group :development, :test do
 
   # JSLint on Rails is a Ruby library which lets you run the JSLint JavaScript code checker
   gem 'jslint_on_rails'
+
+  gem 'net-smtp', require: false
+  gem 'net-imap', require: false
+  gem 'net-pop', require: false
 end
 
 group :development do
@@ -68,6 +81,14 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem 'spring'
+
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'capistrano-nginx'
+  gem 'capistrano-upload-config'
+  gem 'sshkit-sudo'
 end
 
 group :test do
