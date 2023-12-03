@@ -23,5 +23,6 @@ module RoRGetRepoDataFromUser
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    Dotenv.load(File.join(Rails.root, 'config', '.env'))
   end
 end
