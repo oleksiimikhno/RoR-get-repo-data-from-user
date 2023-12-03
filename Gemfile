@@ -83,10 +83,10 @@ group :development do
   # gem 'spring'
 
   gem 'capistrano'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails'
-  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'capistrano3-puma'
   gem 'capistrano-nginx'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
   gem 'capistrano-upload-config'
   gem 'sshkit-sudo'
 end

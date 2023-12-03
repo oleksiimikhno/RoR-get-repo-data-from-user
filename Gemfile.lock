@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/seuros/capistrano-puma.git
-  revision: 2cc11846540489edda10d83e026c9bea04e6fab1
-  specs:
-    capistrano3-puma (6.0.0.beta.1)
-      capistrano (~> 3.7)
-      capistrano-bundler
-      puma (>= 5.1, < 7.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -113,6 +104,10 @@ GEM
       sshkit (~> 1.2)
     capistrano-upload-config (0.9.0)
       capistrano (>= 3.0)
+    capistrano3-puma (5.2.0)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (>= 4.0, < 6.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -155,7 +150,7 @@ GEM
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
-    irb (1.9.1)
+    irb (1.10.0)
       rdoc
       reline (>= 0.3.8)
     jbuilder (2.11.5)
@@ -191,11 +186,7 @@ GEM
       net-protocol
     net-ssh (7.2.0)
     nio4r (2.7.0)
-    nokogiri (1.15.5-aarch64-linux)
-      racc (~> 1.4)
     nokogiri (1.15.5-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
     parser (3.2.2.4)
@@ -205,7 +196,7 @@ GEM
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.4)
-    puma (6.4.0)
+    puma (5.6.7)
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.8)
@@ -274,7 +265,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    rubocop (1.57.2)
+    rubocop (1.58.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -282,7 +273,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.28.1, < 2.0)
+      rubocop-ast (>= 1.30.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.30.0)
@@ -338,9 +329,7 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
-  aarch64-linux
   arm64-darwin-23
-  x86_64-linux
 
 DEPENDENCIES
   bcrypt_pbkdf
@@ -350,7 +339,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   capistrano-upload-config
-  capistrano3-puma!
+  capistrano3-puma
   capybara
   debug
   dotenv-rails
