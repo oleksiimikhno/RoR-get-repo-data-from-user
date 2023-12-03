@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RoRGetRepoDataFromUserSchema < GraphQL::Schema
+class GithubUserSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
