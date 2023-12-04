@@ -5,8 +5,13 @@ ruby '3.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.1.2'
 
+gem 'rack', '~> 2.2.2'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
+
+# Use postgresql as the database for Active Record
+gem 'pg'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
@@ -52,14 +57,14 @@ gem 'bcrypt_pbkdf'
 # for passwords in .env.production file
 gem 'dotenv-rails'
 
+# GraphQL is a query language for APIs
+gem 'graphql'
+gem 'graphiql-rails'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
 
   gem 'debug', platforms: %i[mri windows]
-
-  # GraphQL is a query language for APIs
-  gem 'graphiql-rails'
-  gem 'graphql'
 
   # RuboCop is a Ruby static code analyzer (a.k.a. linter) and code formatter.
   gem 'rubocop', require: false
@@ -83,10 +88,10 @@ group :development do
   # gem 'spring'
 
   gem 'capistrano'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails'
-  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'capistrano3-puma'
   gem 'capistrano-nginx'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
   gem 'capistrano-upload-config'
   gem 'sshkit-sudo'
 end

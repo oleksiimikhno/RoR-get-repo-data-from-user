@@ -10,11 +10,11 @@ install_plugin Capistrano::SCM::Git
 require 'capistrano/rvm'
 require 'capistrano/rails'
 require 'capistrano/puma'
+require 'capistrano/puma/jungle'
 require 'capistrano/puma/nginx'
-# require 'capistrano/puma/jungle'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Nginx
-# install_plugin Capistrano::Puma::Jungle
+install_plugin Capistrano::Puma::Jungle
 require 'capistrano/nginx'
 require 'capistrano/upload-config'
 require 'sshkit/sudo'

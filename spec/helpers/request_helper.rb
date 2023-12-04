@@ -4,7 +4,7 @@
 module RequestHelper
   def get_user_response(query, cassette)
     response = VCR.use_cassette(cassette) do
-      RoRGetRepoDataFromUserSchema.execute(query)
+      GraphQlSchema.execute(query)
     end
 
     response.dig('data', 'githubUser')
@@ -12,7 +12,7 @@ module RequestHelper
 
   def get_repositories_response(query, cassette)
     response = VCR.use_cassette(cassette) do
-      RoRGetRepoDataFromUserSchema.execute(query)
+      GraphQlSchema.execute(query)
     end
 
     response.dig('data', 'githubUserRepos')
