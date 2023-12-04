@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GithubUserSchema < GraphQL::Schema
+class GraphQlSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
