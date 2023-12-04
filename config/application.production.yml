@@ -6,14 +6,11 @@ default: &default
 
 development:
   <<: *default
-  database: app-name-dev
+  database: deployer
 
 test:
   <<: *default
-  database: app-name-test
+  database: deployer
 
 production:
   <<: *default
-  database: <%= ENV.fetch('DB_NAME') %>
-	username: <%= ENV.fetch('DB_USER') %>
-	password: <%= ENV.fetch('DB_PASSWORD') %>
