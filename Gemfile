@@ -54,14 +54,14 @@ gem 'bcrypt_pbkdf'
 # for passwords in .env.production file
 gem 'dotenv-rails'
 
+# GraphQL is a query language for APIs
+gem 'graphiql-rails'
+# gem 'graphql'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
 
   gem 'debug', platforms: %i[mri windows]
-
-  # GraphQL is a query language for APIs
-  gem 'graphiql-rails'
-  # gem 'graphql'
 
   # RuboCop is a Ruby static code analyzer (a.k.a. linter) and code formatter.
   gem 'rubocop', require: false
