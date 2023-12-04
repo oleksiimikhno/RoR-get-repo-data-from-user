@@ -13,6 +13,9 @@ gem 'sprockets-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3', '~> 1.4'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 
@@ -55,8 +58,8 @@ gem 'bcrypt_pbkdf'
 gem 'dotenv-rails'
 
 # GraphQL is a query language for APIs
+gem 'graphql'
 gem 'graphiql-rails'
-# gem 'graphql'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
