@@ -1,24 +1,76 @@
-# README
+# Project Name RoR-get-repo-data-from-user
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+This project is an API server built on Ruby on Rails (RoR) that utilizes GraphQL to fetch data from the GitHub API. The server is designed to return information about a user's name and their repositories, if any.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+### Prerequisites
+Ensure that the following prerequisites are installed on your system:
 
-* System dependencies
+- Ruby 3.2.2
 
-* Configuration
+### Steps
 
-* Database creation
+1. **Clone the repository:**
+    ```bash
+    git clone git@github.com:oleksiimikhno/RoR-get-repo-data-from-user.git
+    ```
 
-* Database initialization
+2. **Navigate to the project directory:**
+    ```bash
+    cd RoR-get-repo-data-from-user
+    ```
 
-* How to run the test suite
+3. **Install dependencies:**
+    ```bash
+    bundle
+    ```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Usage
 
-* Deployment instructions
+1. **Start the Rails server:**
+    ```bash
+    rails s
+    ```
 
-* ...
+2. **Access the API in your web browser:**
+    Open your web browser and navigate to `http://localhost:3000` to interact with the API.
+
+## Dependencies
+
+- Rails 7.1.2
+- Ruby 3.2.2
+- GraphQL
+
+## Deployment
+
+This project uses Capistrano for deployment. Follow the steps below:
+
+1. **Install Capistrano:**
+    ```bash
+    gem install capistrano
+    ```
+
+2. **Initialize Capistrano in your project:**
+    ```bash
+    cap install
+    ```
+
+3. **Configure the deployment settings:**
+    Update `config/deploy.rb` and `config/deploy/production.rb` with your deployment configurations.
+
+4. **Deploy to production:**
+    ```bash
+    cap production deploy
+    ```
+
+Ensure to customize the configuration files based on your server setup.
+
+## Contributing
+
+Feel free to contribute to the project by creating issues or submitting pull requests. Your contributions are highly appreciated!
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
