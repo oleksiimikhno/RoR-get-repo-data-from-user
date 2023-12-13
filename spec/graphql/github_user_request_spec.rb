@@ -6,7 +6,6 @@ require_relative '../helpers/request_helper'
 RSpec.describe 'Github User request', type: :request do
   include RequestHelper
 
-  let(:name) { |user| user.metadata[:name] || 'dhh' }
   let(:query) do
     <<~GRAPHQL
       query {
@@ -16,10 +15,11 @@ RSpec.describe 'Github User request', type: :request do
     GRAPHQL
   end
 
-  it 'check user name' do
-    response = get_user_response(query, 'user_data')
+  let(:name) { |user| user.metadata[:name] || 'dhh' }
+  let(:response_user) { get_user_response(query, 'user_data') }
 
-    expect(JSON.parse(response)['name']).to eq('David Heinemeier Hansson')
+  it 'check user name' do
+    expect(JSON.parse(response_user)['name']).to eq('David Heinemeier Hansson')
   end
 
   it 'user unexist', name: 'qweqeqweqweqwe' do
@@ -29,8 +29,6 @@ RSpec.describe 'Github User request', type: :request do
   end
 
   it 'user type is String' do
-    response = get_user_response(query, 'user_data')
-
-    expect(JSON.parse(response)['name']).to be_an_instance_of(String)
+    expect(JSON.parse(response_user)['name']).to be_an_instance_of(String)
   end
 end
