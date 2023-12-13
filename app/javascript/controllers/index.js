@@ -57,7 +57,7 @@ const renderGithubUserData = async (userName) => {
   }
 
   userField.textContent = userData['name'];
-  if (repositoriesData['repositories'].lenght) {
+  if (repositoriesData['repositories'].length) {
     repositoriesData['repositories'].forEach((repository) => {
       repositoriesList.insertAdjacentHTML('afterbegin', `<li>${repository}</li>`);
     })
