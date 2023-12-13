@@ -34,10 +34,12 @@ module Types
       if user['login']
         user_name = user['name'] || user['login']
 
-        { name: user_name }.to_json 
+        { name: user_name }.to_json
       else
         { errors: user['message'] }.to_json
       end
+    rescue StandardError => e
+      { errors: "User fetch error: #{e}" }.to_json
     end
 
     def github_user_repos(name:)
@@ -46,8 +48,8 @@ module Types
       repos = repos.map { |repo| repo['name'] }
 
       { repositories: repos }.to_json
-    rescue StandardError
-      { errors: repos['message'] }.to_json
+    rescue StandardError => e
+      { errors: "User repositories fetch error: #{e}" }.to_json
     end
 
     private
@@ -55,6 +57,8 @@ module Types
     def get_json(url)
       response = Net::HTTP.get(URI(url))
       JSON.parse(response)
+    rescue StandardError => e
+      { errors: "Failed JSON parse response: #{e}" }.to_json
     end
   end
 end
